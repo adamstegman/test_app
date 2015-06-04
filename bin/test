@@ -1,0 +1,40 @@
+#!/bin/sh
+
+set -ex
+
+export EXECJS_RUNTIME=Node
+export PRECOMPILE_ASSETS=true
+export RACK_ENV=test
+export RAILS_ENV=test
+export RACK_TIMEOUT=120
+
+# Ensure dependencies are ready
+set +e
+  which node >/dev/null 2>&1
+  if [ $? -ne 0 ]; then
+    echo 'Node.js must be installed and on the $PATH' >&2
+    exit 1
+  fi
+
+  pgrep mysql >/dev/null 2>&1
+  if [ $? -ne 0 -a -z "$DATABASE_URL" ]; then
+    /etc/init.d/mysql start
+    if [ $? -ne 0 ]; then
+      echo 'mysql must be accessible' >&2
+      exit 1
+    fi
+  fi
+
+  if [ ! -e config/database.yml -a -z "$DATABASE_URL" ]; then
+    echo 'database must be configured' >&2
+    exit 1
+  fi
+set -e
+
+cd $(dirname $0)/..
+
+bundle
+
+bundle exec rake db:create db:schema:load
+bundle exec rake assets:precompile
+bundle exec rspec

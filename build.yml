@@ -1,0 +1,9 @@
+---
+platform: linux
+image: docker:///adamstegman/rails-testing
+
+inputs:
+  - name: test_app
+
+run:
+  path: test_app/bin/test
