@@ -1,6 +1,6 @@
 ---
 platform: linux
-image: docker:///adamstegman/ruby
+image: docker:///adamstegman/ruby#2.1.6
 
 inputs:
   - name: test_app
