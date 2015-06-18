@@ -8,6 +8,3 @@ export RAILS_ENV=test
 cd $(dirname $0)/..
 
 bundle
-
-bundle exec rake db:create db:schema:load
-bundle exec rspec
