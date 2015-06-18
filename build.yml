@@ -1,6 +1,6 @@
 ---
 platform: linux
-image: docker:///adamstegman/rails-testing
+image: docker:///adamstegman/ruby
 
 inputs:
   - name: test_app
