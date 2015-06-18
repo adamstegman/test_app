@@ -2,9 +2,6 @@
 
 set -ex
 
-export RACK_ENV=test
-export RAILS_ENV=test
-
 cd $(dirname $0)/..
 
 bundle
