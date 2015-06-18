@@ -1,2 +1,2 @@
-class Testing < ActiveRecord::Base
-end
+# class Testing < ActiveRecord::Base
+# end
