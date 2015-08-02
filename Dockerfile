@@ -21,9 +21,11 @@ ENV RAILS_ENV production
 ENV UNICORN_CONCURRENCY 1
 ENV UNICORN_TIMEOUT 15
 
+RUN bundle exec rake assets:precompile
+
 # Clean up the image
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Start Rails app
 EXPOSE 80
-CMD bundle exec rake assets:precompile && bundle exec foreman start -f Procfile.docker
+CMD bundle exec foreman start -f Procfile.docker
