@@ -1,0 +1,4 @@
+files:
+- /opt/test_app/log/production.log
+- /opt/test_app/log/unicorn.stderr.log
+- /opt/test_app/log/unicorn.stdout.log
