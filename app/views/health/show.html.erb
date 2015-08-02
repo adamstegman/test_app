@@ -1,0 +1,7 @@
+<h1>Health</h1>
+<dl>
+  <% @health.services.each do |service| %>
+  <dt><%= service.name %></dt>
+  <dd><%= service.healthy? %></dd>
+  <% end %>
+</dl>
