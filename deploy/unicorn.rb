@@ -2,10 +2,10 @@ app_dir = "/opt/test_app"
 
 working_directory app_dir
 
-pid "#{app_dir}/tmp/unicorn.pid"
+pid "/var/run/unicorn.pid"
 
-stderr_path "#{app_dir}/log/unicorn.stderr.log"
-stdout_path "#{app_dir}/log/unicorn.stdout.log"
+stderr_path "/var/log/unicorn.stderr.log"
+stdout_path "/var/log/unicorn.stdout.log"
 
 listen "/tmp/unicorn.sock", :backlog => 64
 

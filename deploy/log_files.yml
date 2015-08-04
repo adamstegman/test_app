@@ -1,4 +1,8 @@
 files:
 - /opt/test_app/log/production.log
-- /opt/test_app/log/unicorn.stderr.log
-- /opt/test_app/log/unicorn.stdout.log
+- /var/log/unicorn.stderr.log
+- /var/log/unicorn.stdout.log
+- /var/log/unicorn.log
+- /var/log/nginx.log
+- /var/log/remote_syslog.log
+- /var/log/universal_fatal.log
