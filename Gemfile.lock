@@ -36,8 +36,18 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
+    elasticsearch (1.0.5)
+      elasticsearch-api (= 1.0.5)
+      elasticsearch-transport (= 1.0.5)
+    elasticsearch-api (1.0.5)
+      multi_json
+    elasticsearch-transport (1.0.5)
+      faraday
+      multi_json
     erubis (2.7.0)
     execjs (2.5.2)
+    faraday (0.9.1)
+      multipart-post (>= 1.2, < 3)
     hike (1.2.3)
     i18n (0.7.0)
     jbuilder (2.2.16)
@@ -52,6 +62,7 @@ GEM
     mime-types (2.6.1)
     minitest (5.7.0)
     multi_json (1.11.0)
+    multipart-post (2.0.0)
     mysql2 (0.3.18)
     rack (1.5.3)
     rack-test (0.6.3)
@@ -107,6 +118,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  elasticsearch
   jbuilder (~> 2.0)
   jquery-rails
   mysql2
@@ -115,3 +127,6 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   turbolinks
   uglifier (>= 1.3.0)
+
+BUNDLED WITH
+   1.10.6
